@@ -42,6 +42,10 @@ public class Locker {
         this.location = location;
     }
 
+    public Integer getId() {
+        return this.id;
+    }
+
     public String getLockerName() {
         return this.lockerName;
     }

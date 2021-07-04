@@ -33,6 +33,10 @@ public class Location {
         this.country = country;
     }
 
+    public Integer getId() {
+        return this.id;
+    }
+
     public String getCity() {
         return this.city;
     }
