@@ -23,6 +23,9 @@ public class Locker {
 
     @Column(name="lockerName", unique = true, nullable = false)
     private String lockerName;
+    
+    @Column(name="isRented")
+    private Boolean isRented;
 
     @ManyToOne
     @JoinColumn(name = "locationId")
