@@ -3,6 +3,7 @@ package com.assessment.hublocker.location;
 import com.assessment.hublocker.AnObjectResult;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("api/v1/location")
+@CrossOrigin
 public class LocationController {
 
     private final LocationService locationService;
@@ -23,6 +25,7 @@ public class LocationController {
         this.locationService = locationService;
     }
 
+    
     @GetMapping
     public AnObjectResult<Location> getLocations(){
         return locationService.getAllLocations();
