@@ -32,14 +32,29 @@ public class Locker {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Location location;
 
+    @Column(name="height", nullable = false)
+    private Integer height;
+
+    @Column(name="width", nullable = false)
+    private Integer width;
+
+    @Column(name="depth", nullable = false)
+    private Integer depth;
+
+    @Column(name="price", nullable = false)
+    private Double price;
 
     public Locker() {
     }
 
-    public Locker(String lockerName, Boolean isRented, Location location) {
+    public Locker(String lockerName, Boolean isRented, Location location, Integer height, Integer width, Integer depth, Double price) {
         this.lockerName = lockerName;
         this.isRented = isRented;
         this.location = location;
+        this.depth = depth;
+        this.width = width;
+        this.height = height;
+        this.price = price;
     }
 
     public Integer getId() {
@@ -71,12 +86,52 @@ public class Locker {
         this.location = location;
     }
 
+    public Integer getHeight() {
+        return this.height;
+    }
+
+    public void setHeight(Integer height) {
+        this.height = height;
+    }
+
+    public Integer getWidth() {
+        return this.width;
+    }
+
+    public void setWidth(Integer width) {
+        this.width = width;
+    }
+
+    public Integer getDepth() {
+        return this.depth;
+    }
+
+    public void setDepth(Integer depth) {
+        this.depth = depth;
+    }
+
+    public Double getPrice() {
+        return this.price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+
     @Override
     public String toString() {
         return "{" +
-            " lockerName='" + getLockerName() + "'" +
+            " id='" + getId() + "'" +
+            ", lockerName='" + getLockerName() + "'" +
+            ", isRented='" + getIsRented() + "'" +
             ", location='" + getLocation() + "'" +
+            ", height='" + getHeight() + "'" +
+            ", width='" + getWidth() + "'" +
+            ", depth='" + getDepth() + "'" +
+            ", price='" + getPrice() + "'" +
             "}";
     }
+    
 
 }

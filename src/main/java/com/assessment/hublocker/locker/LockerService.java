@@ -60,6 +60,10 @@ public class LockerService {
         lockerToUpdate.setIsRented(locker.getIsRented());
         lockerToUpdate.setLockerName(locker.getLockerName());
         lockerToUpdate.setLocation(locker.getLocation());
+        lockerToUpdate.setDepth(locker.getDepth());
+        lockerToUpdate.setWidth(locker.getWidth());
+        lockerToUpdate.setHeight(locker.getHeight());
+        lockerToUpdate.setPrice(locker.getPrice());
 
         return new AnObjectResult<Locker>().returnObjectResult(lockerToUpdate, true, "");
     }
