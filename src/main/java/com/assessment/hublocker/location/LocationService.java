@@ -68,8 +68,8 @@ public class LocationService {
     public AnObjectResult<Location> countryExists(Location location){
         if(location == null) 
         return new AnObjectResult<Location>().returnObjectResult(false, "The location data passed is empty!");
-        if(locationRepository.findByCountry(location.getCountry()).isPresent()) 
-        return new AnObjectResult<Location>().returnObjectResult(false, "This Country already exists!");
+        if(locationRepository.findByCountryAndStateAndCity(location.getCountry(), location.getState(), location.getCity()).isPresent()) 
+        return new AnObjectResult<Location>().returnObjectResult(false, "This Country, State and City Combination already exists!");
         return null;
     }
 
