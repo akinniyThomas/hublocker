@@ -17,7 +17,7 @@ public class LocationService {
     }
 
     //gets all locations
-    public AnObjectResult<Location> getLocationAllLocations(){
+    public AnObjectResult<Location> getAllLocations(){
         return new AnObjectResult<Location>().returnObjectResult(locationRepository.findAll(), true, "");
     }
 
@@ -30,8 +30,9 @@ public class LocationService {
 
     //adds a new Location
     public AnObjectResult<Location> addLocation(Location location){
-        AnObjectResult<Location> returnLoc = countryExists(location.getCountry());
+        AnObjectResult<Location> returnLoc = countryExists(location);
         if(returnLoc!=null) return returnLoc;
+        
         Location loc = locationRepository.save(location);
         return new AnObjectResult<Location>().returnObjectResult(loc, true, "");
     }
@@ -40,7 +41,8 @@ public class LocationService {
     public AnObjectResult<Location> updateLocation(Integer locationId, Location location){
         AnObjectResult<Location> returnLoc = locationExists(locationId);
         if(returnLoc != null) return returnLoc;
-        returnLoc = countryExists(location.getCountry());
+
+        returnLoc = countryExists(location);
         if(returnLoc!=null) return returnLoc;
 
         Location locationToUpdate = locationRepository.findById(locationId).get();
@@ -63,8 +65,10 @@ public class LocationService {
     }
 
     //checks if country already exists
-    public AnObjectResult<Location> countryExists(String country){
-        if(locationRepository.findByCountry(country).isPresent()) 
+    public AnObjectResult<Location> countryExists(Location location){
+        if(location == null) 
+        return new AnObjectResult<Location>().returnObjectResult(false, "The location data passed is empty!");
+        if(locationRepository.findByCountry(location.getCountry()).isPresent()) 
         return new AnObjectResult<Location>().returnObjectResult(false, "This Country already exists!");
         return null;
     }

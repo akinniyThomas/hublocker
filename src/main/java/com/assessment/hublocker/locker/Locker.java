@@ -36,8 +36,9 @@ public class Locker {
     public Locker() {
     }
 
-    public Locker(String lockerName, Location location) {
+    public Locker(String lockerName, Boolean isRented, Location location) {
         this.lockerName = lockerName;
+        this.isRented = isRented;
         this.location = location;
     }
 
@@ -48,6 +49,15 @@ public class Locker {
     public void setLockerName(String lockerName) {
         this.lockerName = lockerName;
     }
+
+    public Boolean getIsRented() {
+        return this.isRented;
+    }
+
+    public void setIsRented(Boolean isRented) {
+        this.isRented = isRented;
+    }
+    
 
     public Location getLocation() {
         return this.location;
