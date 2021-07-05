@@ -49,6 +49,8 @@ public class LocationService {
         locationToUpdate.setCity(location.getCity());
         locationToUpdate.setCountry(location.getCountry());
         locationToUpdate.setState(location.getState());
+        locationToUpdate.setAddress(location.getAddress());
+        locationToUpdate.setStars(location.getStars());
 
         return new AnObjectResult<Location>().returnObjectResult(location, true, "");
     }

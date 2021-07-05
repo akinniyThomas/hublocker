@@ -6,6 +6,7 @@ import com.assessment.hublocker.AnObjectResult;
 import com.assessment.hublocker.location.Location;
 import com.assessment.hublocker.location.LocationService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,7 +14,7 @@ public class LockerService {
     private final LockerRepository lockerRepository;
     private final LocationService locationService;
 
-
+    @Autowired
     public LockerService(LockerRepository lockerRepository, LocationService locationService) {
         this.lockerRepository = lockerRepository;
         this.locationService = locationService;

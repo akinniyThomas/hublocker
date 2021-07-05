@@ -24,13 +24,21 @@ public class Location {
     @Column(name = "country", nullable = false)
     private String country;
 
+    @Column(name="address", nullable=false)
+    private String address;
+
+    @Column(name="stars", nullable=false)
+    private Integer stars;
+
     public Location() {
     }
 
-    public Location(String city, String state, String country) {
+    public Location(String city, String state, String country, String address, Integer stars) {
         this.city = city;
         this.state = state;
         this.country = country;
+        this.address = address;
+        this.stars = stars;
     }
 
     public Integer getId() {
@@ -61,13 +69,35 @@ public class Location {
         this.country = country;
     }
 
+    public String getAddress() {
+        return this.address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Integer getStars() {
+        return this.stars;
+    }
+
+    public void setStars(Integer stars) {
+        this.stars = stars;
+    }
+
+
     @Override
     public String toString() {
         return "{" +
-            " city='" + getCity() + "'" +
+            " id='" + getId() + "'" +
+            ", city='" + getCity() + "'" +
             ", state='" + getState() + "'" +
             ", country='" + getCountry() + "'" +
+            ", address='" + getAddress() + "'" +
+            ", stars='" + getStars() + "'" +
             "}";
     }
+
+
 
 }
