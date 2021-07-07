@@ -50,6 +50,16 @@ public class StartupData {
         Locker lockerNine = new Locker("Abeokuta_Ogun_1", Boolean.valueOf(false), locationFive, Integer.valueOf(50), Integer.valueOf(50), Integer.valueOf(50), Double.valueOf(50));
         Locker lockerTen = new Locker("Abeokuta_Ogun_2", Boolean.valueOf(false), locationFive, Integer.valueOf(50), Integer.valueOf(50), Integer.valueOf(50), Double.valueOf(50));
 
+        
+        Locker lockerEleven = new Locker("Lekki_Lagos_3", Boolean.valueOf(false), locationOne, Integer.valueOf(80), Integer.valueOf(80), Integer.valueOf(80), Double.valueOf(550));
+        Locker lockerTwelve = new Locker("Lekki_Lagos_4", Boolean.valueOf(false), locationOne, Integer.valueOf(80), Integer.valueOf(80), Integer.valueOf(80), Double.valueOf(550));
+        Locker lockerThirteen = new Locker("Lekki_Lagos_5", Boolean.valueOf(false), locationOne, Integer.valueOf(80), Integer.valueOf(80), Integer.valueOf(80), Double.valueOf(550));
+        Locker lockerFourteen = new Locker("Lekki_Lagos_6", Boolean.valueOf(false), locationOne, Integer.valueOf(80), Integer.valueOf(90), Integer.valueOf(100), Double.valueOf(650));
+
+        
+        Locker lockerFifteen = new Locker("Bergar_Lagos_5", Boolean.valueOf(false), locationThree, Integer.valueOf(50), Integer.valueOf(150), Integer.valueOf(50), Double.valueOf(800));
+        Locker lockerSixteen = new Locker("Bergar_Lagos_6", Boolean.valueOf(false), locationThree, Integer.valueOf(50), Integer.valueOf(150), Integer.valueOf(50), Double.valueOf(800));
+        
         lockerRepository.save(lockerOne);
         lockerRepository.save(lockerTwo);
         lockerRepository.save(lockerThree);
@@ -60,6 +70,12 @@ public class StartupData {
         lockerRepository.save(lockerEight);
         lockerRepository.save(lockerNine);
         lockerRepository.save(lockerTen);
+        lockerRepository.save(lockerEleven);
+        lockerRepository.save(lockerTwelve);
+        lockerRepository.save(lockerThirteen);
+        lockerRepository.save(lockerFourteen);
+        lockerRepository.save(lockerFifteen);
+        lockerRepository.save(lockerSixteen);
     }
 
 }
